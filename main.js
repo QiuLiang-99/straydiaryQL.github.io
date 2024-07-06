@@ -138,6 +138,7 @@
         jsList.push("scr_startChoice.js");
         jsList.push("scr_startUI.js");
         jsList.push("scr_system.js");
+        jsList.push("scr_makeUI.js");
         jsList.push("loadAll.js");
         jsList.push('project.js');
 
