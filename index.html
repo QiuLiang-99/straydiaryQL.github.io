@@ -22,15 +22,17 @@
 </head>
 
 <body>
-  <div id="GameDiv"
-    style="width:100vw; height: 100vh;display: flex;align-items: center;justify-content: center;height: 100vh;margin: 0;">
-    <canvas id="GameCanvas"></canvas>
+  <h1 class="header">NewProject</h1>
+
+  <div id="GameDiv" style="width:1920px; height: 1080px;">
+    <canvas id="GameCanvas" width="1024" height="768"></canvas>
     <div id="splash">
       <div class="progress-bar stripes">
         <span style="width: 0%"></span>
       </div>
     </div>
   </div>
+
   <script src="src/settings.js" charset="utf-8"></script>
   <script src="main.js" charset="utf-8"></script>
 
@@ -58,27 +60,17 @@
         document.body.appendChild(domScript);
       }
 
+      // loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js', function () {
+      //   if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
+      //     loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);
+      //   }
+      //   else {
+      //     window.boot();
+      //   }
+      // });
     })();
   </script>
 
 </body>
-<style>
-  #Cocos2dGameContainer {
-    position: absolute;
-    margin: 0px;
-    overflow: hidden;
-    left: 0px;
-    top: 0px;
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    height: 100%;
-  }
-
-  #GameCanvas {
-    height: 100vh !important;
-  }
-</style>
 
 </html>

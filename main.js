@@ -2,12 +2,12 @@
 
     'use strict';
 
-    function boot () {
+    function boot() {
 
         var settings = window._CCSettings;
         window._CCSettings = undefined;
 
-        if ( !settings.debug ) {
+        if (!settings.debug) {
             // retrieve minified raw assets
             var rawAssets = settings.rawAssets;
             var assetTypes = settings.assetTypes;
@@ -30,7 +30,7 @@
             canvas = document.getElementById('GameCanvas');
         }
 
-        function setLoadingDisplay () {
+        function setLoadingDisplay() {
             // Loading splash scene
             var splash = document.getElementById('splash');
             var progressBar = splash.querySelector('.progress-bar span');
@@ -109,15 +109,39 @@
             );
         };
 
-        // jsList
-        var jsList = settings.jsList;
-        var bundledScript = settings.debug ? 'project.dev.js' : 'project.js';
-        if (jsList) {
-            jsList.push(bundledScript);
-        }
-        else {
-            jsList = [bundledScript];
-        }
+        //func jsList 在前面的会先加载，所以务必注意先后顺序
+        var jsList = [];
+        jsList.push("initialize.js");
+        jsList.push("scr_achieve.js");
+        jsList.push("scr_data.js");
+        jsList.push("scr_data2.js");
+        jsList.push("scr_diary.js");
+        jsList.push("scr_eatUI.js");
+        jsList.push("scr_enemy.js");
+        jsList.push("scr_event.js");
+        jsList.push("scr_explore.js");
+        jsList.push("scr_fightState.js");
+        jsList.push("scr_fight.js");
+        jsList.push("scr_forwardButton.js");
+        jsList.push("scr_friendUI1.js");
+        jsList.push("scr_home.js");
+        jsList.push("scr_mainUIEvent.js");
+        jsList.push("scr_mainUIinit.js");
+        jsList.push("scr_open.js");
+        jsList.push("scr_public.js");
+        jsList.push("scr_rest.js");
+        jsList.push("scr_shop2.js");
+        jsList.push("scr_shop3.js");
+        jsList.push("scr_shop4.js");
+        jsList.push("scr_shopUI.js");
+        jsList.push("scr_skillUI.js");
+        jsList.push("scr_startChoice.js");
+        jsList.push("scr_startUI.js");
+        jsList.push("scr_system.js");
+        jsList.push("loadAll.js");
+        jsList.push('project.js');
+
+
 
         // anysdk scripts
         if (cc.sys.isNative && cc.sys.isMobile) {
